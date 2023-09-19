@@ -47,6 +47,26 @@ Time complexity: O(n)
 Space complexity: O(1)
 '''
 
+'''
+Dry run
+1,3,4,2,2
+
+1 with 3: 
+3,1,4,2,2
+
+3 with  2
+
+2,1,4,3,2
+
+2 with 4
+4,1,2,3,2
+
+4 with 2
+2,1,2,3,4
+
+2 with 2
+
+'''
 
 class Solution(object):
     def findDuplicate(self, nums):
