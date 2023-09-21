@@ -12,7 +12,7 @@ class Solution(object):
         # to avoid infinite loop s<e and not s<=e
         while(s<e):
             if nums[mid]<nums[mid+1]:
-                #goto B ior peak
+                #goto B or peak
                 s=mid+1
             elif nums[mid]>nums[mid+1]:
                 #goto A but don't loose peak element
