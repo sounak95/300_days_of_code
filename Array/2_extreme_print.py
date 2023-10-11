@@ -11,4 +11,6 @@ while(left<=right):
         print(arr[right], end=' ')
     left+=1
     right-=1
-
+'''
+10 50 20 40 30
+'''

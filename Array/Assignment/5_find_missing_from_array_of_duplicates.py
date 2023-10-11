@@ -22,6 +22,7 @@ def find_missing_num(arr):
             print(i+1, end=' ')
 
 # find_missing_num([1,3,2,3,4])
+[-1,-3,-2,-3,4]
 '''
 Sorting plus swapping
 
