@@ -1,4 +1,27 @@
+'''
+printArray([1,2,3,4,5], 5, 0)
+│
+├── print(1)
+│
+└─> printArray([1,2,3,4,5], 5, 1)
+    │
+    ├── print(2)
+    │
+    └─> printArray([1,2,3,4,5], 5, 2)
+        │
+        ├── print(3)
+        │
+        └─> printArray([1,2,3,4,5], 5, 3)
+            │
+            ├── print(4)
+            │
+            └─> printArray([1,2,3,4,5], 5, 4)
+                │
+                ├── print(5)
+                │
+                └─> printArray([1,2,3,4,5], 5, 5)  // Base case reached, no further calls
 
+'''
 def printArray(arr, n, index):
     if index==n:
         return

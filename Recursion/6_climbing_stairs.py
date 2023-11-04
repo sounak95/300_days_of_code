@@ -1,6 +1,18 @@
 # https://leetcode.com/problems/climbing-stairs/
 
+'''
+                            climbStairs(4)
+                           /             \
+             climbStairs(3)                climbStairs(2)
+             /         \                     /         \
+climbStairs(2)   climbStairs(1)   climbStairs(1)   climbStairs(0)
+   /      \           /                  |                |
+climbStairs(1) climbStairs(0)       1 (base case)      1 (base case)
+    |                |
+    1               1
+ (base case)     (base case)
 
+'''
 class Solution(object):
     def climbStairs(self, n):
         """

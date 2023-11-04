@@ -1,21 +1,78 @@
-def print_permutation(s, index):
+def is_safe(srcx, srcy, newx, newy, maze, row, col, visited):
+    # Possibilities:
+    # -> path closed
+    # -> out of bound
+    # -> check if pos is already visited
+    if (0 <= newx < row) and (0 <= newy < col) and maze[newx][newy] == 1 and not visited[newx][newy]:
+        return True
+    else:
+        return False
+
+
+def print_all_path(maze, row, col, srcx, srcy, output, visited):
     # base case
-    if index >= len(s):
-        print(s, end=" ")
+    # destination coordinates are [row-1], [col-1]
+    if srcx == row - 1 and srcy == col - 1:
+        # reached destination
+        print(output)
         return
 
-    s_list = list(s)  # Convert string to list since Python strings are immutable
-    for j in range(index, len(s)):
-        # Swap characters
-        s_list[index], s_list[j] = s_list[j], s_list[index]
+    # 1 case solve karo and baakai recursion sambhal lega
 
-        # recursion
-        print_permutation("".join(s_list), index + 1)
+    # UP
+    newx, newy = srcx - 1, srcy
+    if is_safe(srcx, srcy, newx, newy, maze, row, col, visited):
+        visited[newx][newy] = True
+        output += 'U'
+        print_all_path(maze, row, col, newx, newy, output, visited)
+        output = output[:-1]
+        visited[newx][newy] = False
 
-        # backtracking
-        s_list[index], s_list[j] = s_list[j], s_list[index]
+    # RIGHT
+    newx, newy = srcx, srcy + 1
+    if is_safe(srcx, srcy, newx, newy, maze, row, col, visited):
+        visited[newx][newy] = True
+        output += 'R'
+        print_all_path(maze, row, col, newx, newy, output, visited)
+        output = output[:-1]
+        visited[newx][newy] = False
+
+    # DOWN
+    newx, newy = srcx + 1, srcy
+    if is_safe(srcx, srcy, newx, newy, maze, row, col, visited):
+        visited[newx][newy] = True
+        output += 'D'
+        print_all_path(maze, row, col, newx, newy, output, visited)
+        output = output[:-1]
+        visited[newx][newy] = False
+
+    # LEFT
+    newx, newy = srcx, srcy - 1
+    if is_safe(srcx, srcy, newx, newy, maze, row, col, visited):
+        visited[newx][newy] = True
+        output += 'L'
+        print_all_path(maze, row, col, newx, newy, output, visited)
+        output = output[:-1]
+        visited[newx][newy] = False
 
 
 if __name__ == "__main__":
-    string = input("Enter a string: ")
-    print_permutation(string, 0)
+    maze = [
+        [1, 0, 0, 0],
+        [1, 1, 0, 0],
+        [1, 1, 1, 0],
+        [1, 1, 1, 1]
+    ]
+    row, col = 4, 4
+    srcx, srcy = 0, 0
+    output = ""
+
+    # create visited 2D ARRAY
+    visited = [[False for _ in range(col)] for _ in range(row)]
+
+    if maze[0][0] == 0:
+        # src position is Closed, that means RAT cannot move
+        print("No Path Exists")
+    else:
+        visited[srcx][srcy] = True
+        print_all_path(maze, row, col, srcx, srcy, output, visited)
