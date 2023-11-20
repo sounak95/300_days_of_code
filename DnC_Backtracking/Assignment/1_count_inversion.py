@@ -45,10 +45,6 @@ def merge(arr,temp, s, mid, e):
     return c
 
 
-
-
-    return c
-
 def merge_sort(arr, temp, s, e):
     # Base case: If the segment size is 1 or 0, it's already sorted
     if s >= e:
