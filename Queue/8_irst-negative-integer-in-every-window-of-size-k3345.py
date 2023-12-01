@@ -16,7 +16,7 @@ def printFirstNegativeInteger(A, N, K):
         if len(q) != 0:
             ans.append(A[q[0]])
 
-            # removal
+            # removal if not in range of window
             if i - q[0] >= K:
                 q.pop(0)
         # ans is 0 is no negative element is found
