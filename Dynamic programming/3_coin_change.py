@@ -12,7 +12,10 @@ class Solution(object):
 
     for i in range(len(coins)):
 
+      recAns = 0
+
       if amount - coins[i] >= 0:
+
         recAns = self.solve_using_rec(coins, amount - coins[i])
 
         if recAns != float('inf'):
@@ -44,29 +47,27 @@ class Solution(object):
   def solve_using_tab(self, coins, amount):
     n = amount
     dp = [float('inf')] * (n + 1)
-    
+
     if amount == 0:
       return 0
 
-    dp[0] =0
-    
-    for value in range(1, n+1):
-      
+    dp[0] = 0
+
+    for value in range(1, n + 1):
+
       mini = float('inf')
       for i in range(len(coins)):
 
-        if value-coins[i]>=0:
-          recAns = dp[value-coins[i]]
+        if value - coins[i] >= 0:
+          recAns = dp[value - coins[i]]
 
-          if recAns!= float('inf'):
-            ans = 1+ recAns
+          if recAns != float('inf'):
+            ans = 1 + recAns
             mini = min(mini, ans)
 
       dp[value] = mini
 
     return dp[amount]
-        
-    
 
   def coinChange(self, coins, amount):
     """

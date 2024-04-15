@@ -46,9 +46,9 @@ class Solution(object):
 
   def solve_using_so(self, nums):
     n = len(nums)
-    next = 0  #i+1
-    curr = 0  #i+1
-    prev = nums[n - 1]
+    next = 0  #i+2
+    curr = 0
+    prev = nums[n - 1]  #i+1
 
     for i in range(n - 2, -1, -1):
 
