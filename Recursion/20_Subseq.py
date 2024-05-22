@@ -29,6 +29,8 @@ find_subsequence("abc", "", 0, ans)
         |
         |-- find_subsequence("abc", "", 3, ans) [Base case, print and store ""]
 
+https://www.geeksforgeeks.org/print-subsequences-string/
+
 """
 
 

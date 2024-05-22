@@ -19,6 +19,7 @@ maximizeTheCuts(4, 2, 1, 1)
 └── maximizeTheCuts(3, 2, 1, 1)  // Cut of length z
     ...
 
+https://www.geeksforgeeks.org/problems/cutted-segments1642/1
 '''
 
 class Solution:

@@ -18,9 +18,6 @@ class Solution:
     if n == 1:
       return 1
 
-    dp[0] = 0
-    dp[1] = 1
-
     # check if already exists in dp, then return ans
     if dp[n] != -1:
       return dp[n]
@@ -35,6 +32,7 @@ class Solution:
 
     if n == 0:
       return 0
+
     if n == 1:
       return 1
 
@@ -50,6 +48,7 @@ class Solution:
 
     if n == 0:
       return 0
+
     if n == 1:
       return 1
 
