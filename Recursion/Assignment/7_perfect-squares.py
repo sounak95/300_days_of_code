@@ -1,6 +1,4 @@
-
 # https://leetcode.com/problems/perfect-squares/
-
 '''
 numSquares(5)
 │
@@ -20,18 +18,18 @@ numSquares(5)
 
 '''
 
-
 import math
+
 
 class Solution(object):
 
     def helper(self, n):
         # Base case: if n is 0, the number of perfect squares required is 0 (1-1).
         if n == 0:
-            return 1
+            return 0
         # If n is negative, no perfect square can be subtracted from it to reach 0.
         if n < 0:
-            return 0
+            return float('inf')
         # Initialize the minimum number of perfect squares to infinity.
         ans = float('inf')
         # Loop through all possible perfect squares smaller than or equal to n.
@@ -50,7 +48,8 @@ class Solution(object):
         :rtype: int
         """
         # Subtract 1 from the result to get the correct number of perfect squares.
-        return self.helper(n) - 1
+        return self.helper(n)
+
 
 # Example usage:
 sol = Solution()
