@@ -1,4 +1,10 @@
 '''
+
+Problem Understanding
+The goal of the problem is to print all possible subarrays of a given array. A subarray is a contiguous portion of an array. For example, for an array [1, 2, 3], the subarrays would be [1], [1, 2], [1, 2, 3], [2], [2, 3], and [3].
+
+
+
 print_subarray([1, 2, 3])
 |
 +-- print_subarray_util([1, 2, 3], 0, 0)  # Prints [1]
@@ -24,6 +30,8 @@ print_subarray([1, 2, 3])
      +-- print_subarray_util([1, 2, 3], 2, 3)  # Base case, e == len(nums), returns
 
 '''
+
+
 def print_subarray_util(nums, s, e):
     # Base case: If the end index has reached the length of the array, we return
     if e == len(nums):
@@ -37,13 +45,13 @@ def print_subarray_util(nums, s, e):
     # Recursive call: extend the subarray by increasing the end index 'e'
     print_subarray_util(nums, s, e + 1)
 
+
 def print_subarray(nums):
     # Iterate over the array and use each index as the start index 's'
     for s in range(len(nums)):
         # Call the helper function with the current start index 's' and same 's' as end index 'e'
         print_subarray_util(nums, s, s)
 
+
 # Call the function with an example array
 print_subarray([1, 2, 3, 4, 5])
-
-

@@ -20,9 +20,13 @@ solve([1, 2], 4)
 │   ├── solve([1, 2], 0) // using a coin of 2
 │   │   └── (0) // base case, amount is 0
 
-
+Time Complexity: O(k^amount)  k=len(coins)
+Space Complexity: O(amount)
 '''
+
+
 class Solution(object):
+
     def solve(self, coins, amount):
         # Base case: If the amount is 0, no more coins are needed to make the amount.
         if amount == 0:
@@ -53,8 +57,6 @@ class Solution(object):
         # Return the minimum number of coins needed to make up the amount.
         # If no solution is found, this will return infinity.
         return mini
-
-
 
     def coinChange(self, coins, amount):
         """

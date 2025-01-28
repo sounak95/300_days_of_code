@@ -7,17 +7,22 @@ find([1,2,3,4,3,5,3], 7, 0, 3)
                 └── find([1,2,3,4,3,5,3], 7, 5, 3)
                     └── find([1,2,3,4,3,5,3], 7, 6, 3) [prints 6]
                         └── find([1,2,3,4,3,5,3], 7, 7, 3) (Base case reached, no further calls)
+
+                        Time Complexity: O(n)
+                        Space Complexity: O(n)
 '''
 
+
 def find(arr, n, i, target):
-    if i==n:
+    if i == n:
         return
 
-    if arr[i]==target:
+    if arr[i] == target:
         print(i)
 
-    find(arr,n,i+1, target)
+    find(arr, n, i + 1, target)
 
-arr=[1,2,3,4,3,5,3]
+
+arr = [1, 2, 3, 4, 3, 5, 3]
 
 find(arr, len(arr), 0, 3)

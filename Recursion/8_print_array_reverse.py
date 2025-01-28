@@ -20,14 +20,18 @@ printArray([1,2,3,4,5], 5, 0)
         └── print(2)
     │
     └── print(1)
+
+    Time Complexity: O(n)
+    Space Complexity: O(n)
 '''
 
+
 def printArray(arr, n, index):
-    if index==n:
+    if index == n:
         return
 
-    printArray(arr, n, index+1)
+    printArray(arr, n, index + 1)
     print(arr[index])
 
 
-printArray([1,2,3,4,5], 5, 0)
+printArray([1, 2, 3, 4, 5], 5, 0)

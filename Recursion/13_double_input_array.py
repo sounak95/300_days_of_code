@@ -6,7 +6,12 @@ doubleArr([1, 2, 3, 4, 5], 5, 0)
             └── doubleArr([2, 4, 6, 8, 5], 5, 4)
                 └── doubleArr([2, 4, 6, 8, 10], 5, 5) (Base case reached, no further calls)
 
+                Time Complexity: O(n)
+                Space Complexity: O(n)
+
 '''
+
+
 def doubleArr(arr, n, i):
     # Base case: if the index i is equal to the length of the array, stop recursion
     if i == n:
@@ -15,6 +20,7 @@ def doubleArr(arr, n, i):
     arr[i] = 2 * arr[i]
     # Recursive call for the next element
     doubleArr(arr, n, i + 1)
+
 
 # Initialize the array
 arr = [1, 2, 3, 4, 5]

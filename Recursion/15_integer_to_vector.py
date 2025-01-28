@@ -10,7 +10,13 @@ print_digits(42156)
     [1 printed after returning from the recursive call]
 [5 printed after returning from the recursive call]
 [6 printed after returning from the recursive call]
+
+Time Complexity: O(log n) base 10
+Space Complexity: O(log n) base 10
+
 '''
+
+
 def print_digits(num):
     if num == 0:
         return  # Base case: when num is 0, recursion stops
@@ -19,9 +25,9 @@ def print_digits(num):
     print_digits(num)  # Recursive call with the truncated number
     print(digit)  # After the recursive call, print the last digit
 
+
 # Calling the function to print digits of a number
 print_digits(42156)
-
 '''
 print_digits1(42156, arr)
 └── print_digits1(4215, arr)
@@ -35,7 +41,11 @@ print_digits1(42156, arr)
 [5 appended to arr after returning from the recursive call]
 [6 appended to arr after returning from the recursive call]
 
+Time Complexity: O(log n) base 10
+Space Complexity: O(log n) base 10
+
 '''
+
 
 def print_digits1(num, arr):
     if num == 0:
@@ -43,7 +53,9 @@ def print_digits1(num, arr):
     digit = num % 10  # Extract the last digit of the number
     num = num // 10  # Remove the last digit from the number
     print_digits1(num, arr)  # Recursive call with the truncated number
-    arr.append(digit)  # After the recursive call, append the last digit to the array
+    arr.append(
+        digit)  # After the recursive call, append the last digit to the array
+
 
 # Array to store digits
 arr = []

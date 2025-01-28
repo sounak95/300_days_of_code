@@ -3,22 +3,54 @@
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 '''
-                                 h([7,1,5], 0, inf, 0)
-                                         |
-                                         |  [Check prices[0]: 7 < inf (No), max_profit remains 0]
-                                         V
-                                        h([7,1,5], 1, 7, 0)   <-- Updated min_price to 7
-                                         |
-                                         |  [Check prices[1]: 1 < 7 (Yes), update min_price to 1, max_profit remains 0]
-                                         V
-                                        h([7,1,5], 2, 1, 0)   <-- Updated min_price to 1
-                                         |
-                                         |  [Check prices[2]: 5 - 1 = 4 > 0 (Yes), update max_profit to 4]
-                                         V
-                                        h([7,1,5], 3, 1, 4)   <-- Reached end of array, return max_profit 4
-                                         |
-                                         V
-                                        Return 4   <-- Maximum profit is 4
+Start:
+    |
+    |-- maxProfit([7, 1, 5])
+    |       |
+    |       |-- Initial call to helper([7, 1, 5], 0, inf, 0)
+    |               |
+    |               |-- Check prices[0] = 7, min_price = inf
+    |               |      |
+    |               |      |-- Update min_price = 7 (since 7 < inf)
+    |               |      |
+    |               |      |-- today_profit = 7 - 7 = 0
+    |               |      |      |
+    |               |      |      |-- max_profit remains 0 (since 0 == 0)
+    |               |      |
+    |               |      |-- Recursive call helper([7, 1, 5], 1, 7, 0)
+    |               |               |
+    |               |               |-- Check prices[1] = 1, min_price = 7
+    |               |               |      |
+    |               |               |      |-- Update min_price = 1 (since 1 < 7)
+    |               |               |      |
+    |               |               |      |-- today_profit = 1 - 1 = 0
+    |               |               |      |      |
+    |               |               |      |      |-- max_profit remains 0 (since 0 == 0)
+    |               |               |      |
+    |               |               |      |-- Recursive call helper([7, 1, 5], 2, 1, 0)
+    |               |               |               |
+    |               |               |               |-- Check prices[2] = 5, min_price = 1
+    |               |               |               |      |
+    |               |               |               |      |-- min_price remains 1 (since 5 > 1)
+    |               |               |               |      |
+    |               |               |               |      |-- today_profit = 5 - 1 = 4
+    |               |               |               |      |      |
+    |               |               |               |      |      |-- Update max_profit = 4 (since 4 > 0)
+    |               |               |               |
+    |               |               |               |-- Recursive call helper([7, 1, 5], 3, 1, 4)
+    |               |               |                      |
+    |               |               |                      |-- Base case reached (i == len(prices))
+    |               |               |                      |
+    |               |               |                      |-- Return max_profit = 4
+    |               |               |
+    |               |               |-- Return max_profit = 4
+    |               |
+    |               |-- Return max_profit = 4
+    |
+    |-- Return max_profit = 4
+    |
+End: Max Profit is 4
+
 
 
 

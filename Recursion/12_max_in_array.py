@@ -24,7 +24,11 @@ max_in_array([1,2,3,400,5,99], 6, 0, [-inf])
 │
 └─> (end of recursion, array index is equal to n)
 
+Time Complexity: O(n)
+Space Complexity: O(n)
+
 '''
+
 
 def max_in_array(arr, n, i, maxi):
     # Base case: if the end of the array is reached, stop recursion
@@ -35,10 +39,11 @@ def max_in_array(arr, n, i, maxi):
     # Recursively call the function for the next element
     max_in_array(arr, n, i + 1, maxi)
 
+
 # Initialize maximum value with negative infinity
 maxi = [-float('inf')]
 # Call the recursive function starting at index 0
-max_in_array([1,2,3,400,5, 99], 6, 0, maxi)
+max_in_array([1, 2, 3, 400, 5, 99], 6, 0, maxi)
 
 # Print the maximum value found in the array
 print(maxi[0])

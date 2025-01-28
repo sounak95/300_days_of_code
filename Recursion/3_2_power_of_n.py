@@ -22,6 +22,9 @@
                             |
                          return 1 (base case)
 
+                         Time complexity: o(n)
+                         Space Complexity: o(n)
+
 '''
 
 def pow(n):

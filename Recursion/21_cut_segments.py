@@ -19,8 +19,12 @@ maximizeTheCuts(4, 2, 1, 1)
 └── maximizeTheCuts(3, 2, 1, 1)  // Cut of length z
     ...
 
+    Time Complexity: O(3^n)
+    Space Complexity: O(n)
+
 https://www.geeksforgeeks.org/problems/cutted-segments1642/1
 '''
+
 
 class Solution:
     # Function to find the maximum number of cuts.
@@ -53,7 +57,6 @@ class Solution:
 
 
 # code here
-
 
 # {
 # Driver Code Starts

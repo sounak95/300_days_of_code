@@ -7,7 +7,12 @@ find("babbar", 6, 0, 'a')
                 └── find("babbar", 6, 5, 'a')
                     └── find("babbar", 6, 6, 'a')  # Base case reached, recursion ends
 
+                    Time Complexity: O(n)
+                    Space Complexity: O(n)
+
 '''
+
+
 def find(arr, n, i, target):
     # Base case: If we've reached the end of the array, return to end the recursion
     if i == n:
@@ -19,6 +24,7 @@ def find(arr, n, i, target):
 
     # Recursive case: Move to the next index in the array
     find(arr, n, i + 1, target)
+
 
 # The string we are searching through
 arr = "babbar"

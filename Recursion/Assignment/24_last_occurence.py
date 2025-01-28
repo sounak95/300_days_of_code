@@ -2,7 +2,10 @@
 last_occ(arr, 6, 4)     # Checks index 6, value is 5, not the target
   └── last_occ(arr, 5, 4)   # Checks index 5, value is 4, this is the target, returns 5
 
+Time complexity: o(n)
+Space Complexity: o(n)
 '''
+
 
 def last_occ(arr, index, target):
     # If the index is less than 0, it means we've reached the beginning of the array
@@ -18,9 +21,9 @@ def last_occ(arr, index, target):
         # If it isn't, recursively call 'last_occ' with the previous index to continue the search.
         return last_occ(arr, index - 1, target)
 
+
 # Example array and target
 arr = [1, 2, 3, 3, 4, 4, 5]
 # Call the function with the array, the starting index (which is the last index of the array),
 # and the target value we're searching for.
 print(last_occ(arr, len(arr) - 1, 4))
-

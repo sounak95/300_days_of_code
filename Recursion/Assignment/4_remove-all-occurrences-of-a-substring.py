@@ -11,7 +11,7 @@ removeOccurrences("daabcbaabcbc", "abc")
      +-- helper(["dabaabcbc"], "abc")
           |
           +-- s = "dabaabcbc"
-          |   s.find("abc") = 5
+          |   s.find("abc") = 4
           |   s = "daba" + "bc"
           |
           +-- helper(["dababc"], "abc")
@@ -29,6 +29,7 @@ removeOccurrences("daabcbaabcbc", "abc")
 
 '''
 
+
 class Solution(object):
     # Helper function to recursively remove 'part' from 's'
     def helper(self, l1, part):
@@ -40,8 +41,11 @@ class Solution(object):
             index = s.find(part)  # Find the index where 'part' starts
 
             # Divide the string into two parts: before 'part' and after 'part'
-            left_part = s[0:index]  # The left part of the string, before 'part'
-            right_part = s[index + len(part):]  # The right part of the string, after 'part'
+            left_part = s[0:
+                          index]  # The left part of the string, before 'part'
+            right_part = s[
+                index +
+                len(part):]  # The right part of the string, after 'part'
 
             # Concatenate the left and right parts, excluding 'part'
             s = left_part + right_part
@@ -59,8 +63,10 @@ class Solution(object):
     def removeOccurrences(self, s, part):
         l1 = []  # Create a list to hold the string, to pass by reference
         l1.append(s)  # Add the initial string to the list
-        self.helper(l1, part)  # Call the helper function with the list and 'part'
+        self.helper(l1,
+                    part)  # Call the helper function with the list and 'part'
         return l1[0]  # Return the modified string
+
 
 # str1 = "abcd"
 # print(str1.find("cd"))

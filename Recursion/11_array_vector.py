@@ -1,4 +1,3 @@
-
 '''
 solve([1,2,3,4,5], 5, 0, [])
 │
@@ -17,8 +16,12 @@ solve([1,2,3,4,5], 5, 0, [])
 │   └─> (end of recursion, array index is equal to n)
 │
 └─> (end of recursion, array index is equal to n)
+
+Time Complexity: O(n)
+Space Complexity: O(n)
 '''
 # push even elements to vector
+
 
 def solve(arr, n, i, vector):
     # Base case: if we've reached the end of the array, stop the recursion
@@ -30,10 +33,11 @@ def solve(arr, n, i, vector):
     # Recur for the next element in the array
     solve(arr, n, i + 1, vector)
 
+
 # Initialize an empty list to store even numbers
 vector = []
 # Call the recursive function with the initial index set to 0
-solve([1,2,3,4,5], 5, 0, vector)
+solve([1, 2, 3, 4, 5], 5, 0, vector)
 
 # Print the list containing even numbers from the array
 print(vector)

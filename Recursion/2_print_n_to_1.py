@@ -23,6 +23,9 @@ print_n_to_1(5)
                     |
                     +-- Print nothing (base case, return without printing)
 
+Time complexity: o(n)
+Space Complexity: o(n)
+
 '''
 
 def print_n_to_1(n):

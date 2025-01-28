@@ -31,6 +31,9 @@ find_subsequence("abc", "", 0, ans)
 
 https://www.geeksforgeeks.org/print-subsequences-string/
 
+Time Complexity: O(n*2^n)
+Space Complexity: O(n)
+
 """
 
 
@@ -53,6 +56,6 @@ def find_subsequence(str1, output, index, ans):
 
 # Driver code
 ans = []  # This will hold all the subsequences
-find_subsequence("abc", "", 0, ans)  # Call the function with the initial parameters
+find_subsequence("abc", "", 0,
+                 ans)  # Call the function with the initial parameters
 print(ans)  # Print the list of all subsequences
-

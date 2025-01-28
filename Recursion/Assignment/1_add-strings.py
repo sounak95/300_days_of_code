@@ -1,5 +1,4 @@
 # https://leetcode.com/problems/add-strings/
-
 '''
 addStrings("123", "89")
 └── helper("123", 2, "89", 1, [])
@@ -11,8 +10,11 @@ addStrings("123", "89")
     │   └── (p2 out of bounds, p1 moves to 0)
     └── (p2 moves to 0, p1 moves to 1)
 
+Time complexity: o(n).  max(len(num1),len(num2)), which we’ll denote as n
+Space Complexity: o(n)
 
 '''
+
 
 class Solution(object):
 

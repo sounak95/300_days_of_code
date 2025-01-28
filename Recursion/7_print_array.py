@@ -21,12 +21,16 @@ printArray([1,2,3,4,5], 5, 0)
                 │
                 └─> printArray([1,2,3,4,5], 5, 5)  // Base case reached, no further calls
 
+Time Complexity: O(n)
+Space Complexity: O(n)
 '''
+
+
 def printArray(arr, n, index):
-    if index==n:
+    if index == n:
         return
     print(arr[index])
-    printArray(arr, n, index+1)
+    printArray(arr, n, index + 1)
 
 
-printArray([1,2,3,4,5], 5, 0)
+printArray([1, 2, 3, 4, 5], 5, 0)

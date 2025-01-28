@@ -1,7 +1,6 @@
 # https://leetcode.com/problems/house-robber/
 # The problem is to find the maximum amount of money you can rob tonight without alerting the police.
 # The constraint is that you cannot rob adjacent houses.
-
 '''
 rob([2,7,9,3,1], 0)
 ├── rob([2,7,9,3,1], 2) // Choose to rob house 0
@@ -29,6 +28,9 @@ rob([2,7,9,3,1], 0)
                 ├── rob([2,7,9,3,1], 6) // Choose to rob house 4 (base case, out of bounds)
                 └── rob([2,7,9,3,1], 5) // Skip house 4 (base case, out of bounds)
 
+
+Time Complexity: O(2^n)
+Space Complexity: O(n)
 '''
 
 
